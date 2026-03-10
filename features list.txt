@@ -1,5 +1,4 @@
 the 10th group: rayen hobeich , tarek rakha .
-
 Project Title:
 Smart Online Clothing Store Management System.
 
@@ -136,4 +135,5 @@ Edit brand description
 Update store location
 
 Manage contact information
+
 
