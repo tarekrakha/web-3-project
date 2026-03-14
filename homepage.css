@@ -1,0 +1,104 @@
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background: linear-gradient(to right, #4facfe, #00f2fe);
+color:#333;
+}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:white;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:28px;
+color:#4facfe;
+}
+
+.nav-links a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:bold;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#4facfe;
+}
+.sec{
+height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.sec2 h2{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.sec2 p{
+font-size:20px;
+margin-bottom:25px;
+}
+.btn{
+background:#4facfe;
+color:white;
+padding:12px 30px;
+border-radius:25px;
+text-decoration:none;
+margin-right:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#2d8cf0;
+transform:scale(1.05);
+}
+
+.btn2{
+border:2px solid white;
+color:white;
+padding:12px 30px;
+border-radius:25px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn2:hover{
+background:white;
+color:#4facfe;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#f9f9f9;
+padding:30px;
+width:200px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+cursor:pointer;
+}
+footer{
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
