@@ -1,40 +1,142 @@
- <html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Valmero | Home</title>
+    <title>morvani | Home</title>
+    <link rel="stylesheet" href="shop.css">
     <link rel="stylesheet" href="homepage.css">
 </head>
-
 <body>
 
-<nav>
-    <h1 class="logo">Valmero</h1>
-
-    <div class="nav-links">
+    <nav>
+    <div class="nav-left">
         <a href="login.html">Login</a>
         <a href="index.html">Create Account</a>
     </div>
-</nav>
 
-<section class="sec">
-
-    <div class="sec2">
-        <h2>Welcome to Valmero</h2>
-        <p>Your modern clothing destination.</p>
-
-        <div class="buttons">
-            <a href="#" class="btn">Shop Now</a>
-            <a href="#" class="btn2">Explore</a>
-        </div>
+    <div class="logo">
+        <img src="llogo.png" alt="MORVANI Logo" width="120">
     </div>
 
-</section>
+    <div class="nav-right">
+        <a href="cart.html" class="cart-link">
+            <span id="cart-count">0</span>
+            <img src="bag.png" alt="Cart" width="25">
+        </a>
+    </div>
+</nav>
+<section class="sec">
+    <div class="background-images">
+        <img src="pic1.png" alt="" class="bg-img">
+        <img src="pic2.png" alt="" class="bg-img">
+        <img src="pic3.png" alt="" class="bg-img">
+        <img src="pic4.png" alt="" class="bg-img">
+    </div>
+        <div class="sec2">
+            <h1>Welcome to MORVANI</h1>
+            <h2>THIS SEASON, WE'RE BRINGING </h2>
+                <h2 class="font"><em>the natural into the future</em></h2>
+        </div>
+    </section>
 
+    <a href="https://wa.me/96181540749" class="whatsapp-btn" target="_blank">
+        <img src="whts.png" alt="WhatsApp">
+    </a>
 
+   
+    <section class="shop">
+        <h2>Shop Our Collection</h2>
 
-<footer>
-<p>© 2026 Valmero Clothing Store</p>
-</footer>
+        <div class="products">
+             <div class="product-card">
+                <img src="pic2.png" alt="Casual Pants">
+                <h3>Summer Collection</h3>
+                
+                <button onclick="addToCart('Casual Pants',35,'pants.jpg')">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="pic1.png" alt="Classic Shirt">
+                <h3>Spring Collection</h3>
+                
+                <button onclick="addToCart('Classic Shirt',25,'shirt.jpg')">Add to Cart</button>
+            </div>
 
+            <div class="product-card">
+                <img src="pic3.png" alt="Black Hoodie">
+                <h3>Fall Collection</h3>
+                
+                <button onclick="addToCart('Black Hoodie',40,'hoodie.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="pic4.png" alt="Denim Jacket">
+                <h3>Winter Collection</h3>
+                
+                
+                <button onclick="addToCart('Denim Jacket',55,'jacket.jpg')">Add to Cart</button>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 morvani Clothing Store</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://web.telegram.org" target="_blank">
+            <img src="telegram.png" alt="Telegram">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="snapchat.png" alt="twitter">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="twitter.png" alt="twitter">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.x.com" target="_blank">
+            <img src="x.png" alt="X">
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="youtube.png" alt="YouTube">
+        </a>
+    </div>
+    <div class="footer-contact">
+        <p>
+            <img src="loc.png" alt="Location" class="contact-icon">
+            <a href="https://maps.app.goo.gl/eLCFfGcGwU4YLZnw5?g_st=ic" target="_blank">zgharta, Lebanon</a>
+        </p>
+        <p>
+            <img src="phone.png" alt="Phone" class="contact-icon">
+            <a href="tel:+96181540749">+96181540749</a>
+        </p>
+        <p>
+            <img src="mail.png" alt="Email" class="contact-icon">
+            <a href="mailto:info@morveni.com">info@morveni.com</a>
+        </p>
+    </div>
+    </footer>
+    <script>
+   
+        window.addEventListener("scroll", function(){
+            let navbar = document.querySelector("nav");
+            if(window.scrollY > 50){
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+      
+    </script>
 </body>
 </html>
