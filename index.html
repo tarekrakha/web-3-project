@@ -1,39 +1,250 @@
-<html>
-<head>
-<title>Create an Account:</title>
-<link rel="stylesheet" href="create.css">
-<script>
-function createAccount(){
-    var f = document.getElementsByClassName("fname")[0].value;
-    var l = document.getElementsByClassName("lname")[0].value;
-    var u = document.getElementsByClassName("user")[0].value;
-    var m = document.getElementsByClassName("mail")[0].value;
-    alert("First Name: " + f +
-          "\nLast Name: " + l +
-          "\nUsername: " + u +
-          "\nEmail: " + m);
-}
-</script>
-</head>
-<body>
-<div class="container">
-<h1 class="p1">Create an account</h1>
-First name:<br>
-<input type="text" class="fname" placeholder="hadi"><br>
-Last name:<br>
-<input type="text" class="lname" placeholder="itani"><br>
-Username:<br>
-<input type="text" class="user" placeholder="hadiitani21"><br
-Email:<br>
-<input type="email" class="mail" placeholder="hadi.itani@example.com"><br>
-<em>Email must use @</em><br>
-Password:<br>
-<input type="password" class="pass" placeholder="*********"><br>
- <em>passwordmust be more than 8 caracter</em><br>
-<button class="create" onclick="createAccount()">Create</button>
-</div>
-</body>
-<footer>
-<p>© 2026 Valmero Clothing Store</p>
-</footer>
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <title>Product page </title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+   
+
+    <main id="main" class="container page">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="#">Men</a>
+        <span aria-hidden="true">/</span>
+        <a href="#">Clothing</a>
+        <span aria-hidden="true">/</span>
+        <a href="#">Polos</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Striped polo shirt</span>
+      </nav>
+
+      <div class="product">
+        <section class="gallery" aria-label="Product images">
+          <div class="thumbs" aria-label="Image thumbnails">
+            <button class="thumb thumb--active" type="button" aria-label="Image 1">
+              <span class="ph ph--thumb ph--a" aria-hidden="true"></span>
+            </button>
+            <button class="thumb" type="button" aria-label="Image 2">
+              <span class="ph ph--thumb ph--b" aria-hidden="true"></span>
+            </button>
+            <button class="thumb" type="button" aria-label="Image 3">
+              <span class="ph ph--thumb ph--c" aria-hidden="true"></span>
+            </button>
+            <button class="thumb" type="button" aria-label="Image 4">
+              <span class="ph ph--thumb ph--d" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <figure class="hero" aria-label="Selected image">
+            <div class="ph ph--hero ph--a" role="img" aria-label="Product image"></div>
+            <figcaption class="hero__meta">
+              <span class="pill">New Season</span>
+              <span class="hero__count">Image 1 of 4</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <aside class="buybox" aria-label="Purchase panel">
+          <div class="buybox__meta">
+            <div class="kicker">New Season</div>
+            <h1 class="title">
+              <span class="brand">Polo Ralph Lauren</span>
+              <span class="name">striped polo shirt</span>
+            </h1>
+          </div>
+
+          <div class="price">
+            <div class="price__value">£234</div>
+            <div class="price__sub">Import duties included</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <section class="sizes" aria-label="Size selection">
+            <div class="row">
+              <div class="row__left">
+                <div class="label">Select size</div>
+              </div>
+              <a class="link" href="#">Size guide</a>
+            </div>
+
+            <fieldset class="sizegrid">
+              <legend class="sr-only">Choose a size</legend>
+              <label class="size">
+                <input type="radio" name="size" />
+                <span>S</span>
+              </label>
+              <label class="size">
+                <input type="radio" name="size" />
+                <span>M</span>
+              </label>
+              <label class="size">
+                <input type="radio" name="size" />
+                <span>L</span>
+              </label>
+              <label class="size size--disabled">
+                <input type="radio" name="size" disabled />
+                <span>XL</span>
+              </label>
+            </fieldset>
+          </section>
+
+          <div class="cta">
+            <button class="btn btn--primary" type="button">Add To Bag</button>
+            <button class="btn btn--ghost" type="button" aria-label="Add to wishlist">
+              Wishlist
+            </button>
+          </div>
+
+          <section class="delivery" aria-label="Estimated delivery">
+            <div class="delivery__label">Estimated delivery</div>
+            <div class="delivery__value">20 Mar - 27 Mar</div>
+          </section>
+
+          <div class="divider"></div>
+
+          <section class="details" aria-label="Product details">
+            <h2 class="section-title">The Details</h2>
+            <div class="detail-card">
+              <div class="detail-card__head">
+                <div class="detail-card__brand">
+                  <a class="link" href="#">Polo Ralph Lauren</a>
+                </div>
+                <div class="detail-card__name">striped polo shirt</div>
+              </div>
+
+              <div class="subhead">Highlights</div>
+              <ul class="bullets">
+                <li>polo collar</li>
+                <li>button fastening</li>
+                <li>short sleeves</li>
+                <li>striped</li>
+                <li>navy blue/white</li>
+              </ul>
+
+              <div class="subhead">Composition</div>
+              <div class="text">Fabric 100%</div>
+
+              <div class="subhead">Washing instructions</div>
+              <div class="text">Read Manufacturer Guidelines</div>
+
+              <div class="subhead">Product IDs</div>
+              <dl class="ids">
+                <div class="ids__row">
+                  <dt>FARFETCH ID</dt>
+                  <dd>34831185</dd>
+                </div>
+                <div class="ids__row">
+                  <dt>Brand style ID</dt>
+                  <dd>710B13894002</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <section class="accordions" aria-label="More information">
+            <details class="acc" open>
+              <summary>Size &amp; Fit</summary>
+              <div class="acc__body">
+                <p class="text">
+                  Regular fit. For a roomier look, size up. (Static example text — you can
+                  replace with the exact copy you want.)
+                </p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>Delivery, Returns &amp; Seller</summary>
+              <div class="acc__body">
+                <p class="text">
+                  Delivery dates vary by location. 30-day returns on eligible items. Seller
+                  information appears here.
+                </p>
+              </div>
+            </details>
+          </section>
+        </aside>
+      </div>
+<a href="https://wa.me/96181540749" class="whatsapp-btn" target="_blank">
+        <img src="whts.png" alt="WhatsApp">
+    </a>
+      <section class="recs" aria-label="Recommendations">
+        <div class="recs__head">
+          <h2 class="section-title">Cable knits</h2>
+          <a class="link" href="#">Show more</a>
+        </div>
+
+        <div class="cards">
+          <a class="card" href="#">
+            <span class="ph ph--card ph--b" aria-hidden="true"></span>
+            <span class="card__title">logo-embroidered cable-knit half-zip jumper</span>
+            <span class="card__price">£225</span>
+          </a>
+          <a class="card" href="#">
+            <span class="ph ph--card ph--c" aria-hidden="true"></span>
+            <span class="card__title">cable-knit polo shirt</span>
+            <span class="card__price">£276</span>
+          </a>
+          <a class="card" href="#">
+            <span class="ph ph--card ph--d" aria-hidden="true"></span>
+            <span class="card__title">cable-knit quarter-zip sweater</span>
+            <span class="card__price">£235</span>
+          </a>
+          <a class="card" href="#">
+            <span class="ph ph--card ph--a" aria-hidden="true"></span>
+            <span class="card__title">cable knit half-zip jumper</span>
+            <span class="card__price">£215</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+     <footer>
+        <p>© 2026 morvani Clothing Store</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://web.telegram.org" target="_blank">
+            <img src="telegram.png" alt="Telegram">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="snapchat.png" alt="twitter">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="twitter.png" alt="twitter">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.x.com" target="_blank">
+            <img src="x.png" alt="X">
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="youtube.png" alt="YouTube">
+        </a>
+    </div>
+    <div class="footer-contact">
+        <p>
+            <img src="loc.png" alt="Location" class="contact-icon">
+            <a href="https://maps.app.goo.gl/eLCFfGcGwU4YLZnw5?g_st=ic" target="_blank">zgharta, Lebanon</a>
+        </p>
+        <p>
+            <img src="phone.png" alt="Phone" class="contact-icon">
+            <a href="tel:+96181540749">+96181540749</a>
+        </p>
+        <p>
+            <img src="mail.png" alt="Email" class="contact-icon">
+            <a href="mailto:info@morveni.com">info@morveni.com</a>
+        </p>
+    </div>
+    </footer>
 </html>
