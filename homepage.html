@@ -1,40 +1,147 @@
- <html>
-<html>
+<!DOCTYPE html>
 <head>
-    <title>Valmero | Home</title>
-    <link rel="stylesheet" href="homepage.css">
-</head>
+<title>Morvani | Home</title>
 
+<!-- Your CSS file -->
+<link rel="stylesheet" href="homepage.css">
+
+</head>
 <body>
 
-<nav>
-    <h1 class="logo">Valmero</h1>
+<!-- NAVBAR -->
+<nav id="navbar">
+    <div class="nav-left">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+    </div>
 
-    <div class="nav-links">
+    <div class="logo">
+        <img src="llogo.png" alt="Morvani Logo">
+    </div>
+
+    <div class="nav-right">
         <a href="login.html">Login</a>
-        <a href="index.html">Create Account</a>
+        <a href="create.html">create an account</a>
     </div>
 </nav>
 
-<section class="sec">
 
-    <div class="sec2">
-        <h2>Welcome to Valmero</h2>
-        <p>Your modern clothing destination.</p>
 
-        <div class="buttons">
-            <a href="#" class="btn">Shop Now</a>
-            <a href="#" class="btn2">Explore</a>
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="background1.jpeg" class="active">
+        <img src="background2.jpeg">
+        <img src="background3.jpeg">
+    </div>
+</div>
+
+
+<section id="shop" class="shop">
+    <h2>Our Products</h2>
+
+    <div class="products">
+
+        <div class="product-card">
+            <img src="pic1.png">
+            <h3>Summer collection</h3>
+            <button >shop now</button>
         </div>
+
+        <div class="product-card">
+            <img src="pic2.png">
+            <h3>Spring collection</h3>
+            <button>shop now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="pic4.png">
+            <h3>Fall collection</h3>
+            <button>shop now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="pic3.png">
+            <h3>Winter collection</h3>
+            <button>shop now</button>
+        </div>
+
     </div>
 
+    <a href="cart.html" class="go-cart-btn">Go to Cart</a>
 </section>
 
+<!-- WHATSAPP BUTTON -->
+<a href="#" class="whatsapp-btn">
+    <img src="whts.png" alt="WhatsApp">
+</a>
 
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Valmero Clothing Store</p>
+    <p>© 2026 MORVENI Clothing Store</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://web.telegram.org" target="_blank">
+            <img src="telegram.png" alt="Telegram">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="snapchat.png" alt="twitter">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="twitter.png" alt="twitter">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.x.com" target="_blank">
+            <img src="x.png" alt="X">
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="youtube.png" alt="YouTube">
+        </a>
+    </div>
+    <div class="footer-contact">
+        <p>
+            <img src="loc.png" alt="Location" class="contact-icon">
+            <a href="https://maps.app.goo.gl/eLCFfGcGwU4YLZnw5?g_st=ic" target="_blank">zgharta, Lebanon</a>
+        </p>
+        <p>
+            <img src="phone.png" alt="Phone" class="contact-icon">
+            <a href="tel:+96181540749">+96181540749</a>
+        </p>
+        <p>
+            <img src="email.png" alt="Email" class="contact-icon">
+            <a href="mailto:info@morveni.com">info@morveni.com</a>
+        </p>
+    </div>
 </footer>
+
+<!-- SIMPLE JS -->
+<script>
+/* NAVBAR SCROLL EFFECT */
+window.addEventListener("scroll", function(){
+    let nav = document.getElementById("navbar");
+    nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+/* SLIDER */
+let slides = document.querySelectorAll(".slides img");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 3000);
+</script>
 
 </body>
 </html>

@@ -1,0 +1,146 @@
+:root{
+    --gold:#A38C55;
+    --light:#E8DCC2;
+    --dark:#553f0d;
+    --white:#ffffff;
+    --danger:#ef4444;
+    --success:#22c55e;
+    --warning:#f59e0b;
+}
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, var(--gold), var(--light));
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    background:var(--dark);
+    color:white;
+    min-height:100vh;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:var(--gold);
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar li:hover{
+    background:var(--gold);
+}
+
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    display:block;
+}
+
+.active{
+    background:var(--gold);
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    color:var(--dark);
+}
+
+/* BUTTONS */
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-add{background:var(--gold);color:white;}
+.btn-edit{background:var(--warning);color:white;font-size:12px;}
+.btn-delete{background:var(--danger);color:white;font-size:12px;}
+.btn-save{background:var(--success);color:white;width:100%;margin-top:10px;}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+/* FORM */
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group input,
+.form-group select{
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:var(--light);
+    padding:15px;
+    color:var(--dark);
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+.product-img{
+    width:40px;
+    height:40px;
+    background:#ddd;
+    border-radius:6px;
+}
+
+.badge{
+    background:#dcfce7;
+    color:#166534;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:11px;
+}

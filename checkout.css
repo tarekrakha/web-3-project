@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #A38C55, #E8DCC2);
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin: 30px 0;
+}
+
+/* Layout */
+.checkout-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Boxes */
+.box {
+    background: white;
+    padding: 40px;
+    width: 300px;
+    border-radius: 10px;
+    color: #A38C55;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Payment */
+.box label {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Card Info */
+.card-info input {
+    margin-top: 5px;
+}
+
+/* Summary */
+.delivery {
+    color: #A38C55;
+    font-weight: bold;
+}
+
+/* Button */
+.place-order {
+    width: 100%;
+    padding: 12px;
+    background: #A38C55;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.whatsapp-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-btn img{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius:15px;
+}
+
+.whatsapp-btn img:hover{
+    transform: scale(1.1);
+}
+
+
+footer{
+    text-align:center;
+    padding:15px;
+   background:#A38C55;
+    margin-top:40px;
+}
+footer .social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+footer .social-links a img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+footer .social-links a img:hover {
+    transform: scale(1.2); 
+}
+
+footer .footer-contact {
+    margin-top: 15px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+footer .footer-contact a {
+    color:#ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .footer-contact a:hover {
+    text-decoration: underline;
+}
+footer .footer-contact .contact-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle; 
+}
+.font{
+    font-family: 'Allura' , cursive;
+}

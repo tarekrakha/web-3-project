@@ -1,66 +1,73 @@
-body{
- font-family: Arial, sans-serif;
- background: linear-gradient(to right, #4facfe, #00f2fe);
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
-}
-.container{
- background: white;
- padding: 35px;
- border-radius: 10px;
- box-shadow: 0 0 15px rgba(0,0,0,0.15);
- text-align:center;
-}
-h1{
-color: #333;
-}
-input{
- width: 250px;
- padding: 10px;
- margin: 8px;
- border: 1px solid #ccc;
- border-radius: 6px;
- cursor: pointer;
- transition:0.3s;
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #A38C55, #E8DCC2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-input:focus{
-border-color: #4facfe;
-outline: none;
-box-shadow: 0 0 5px rgba(79,172,254,0.5);
-transform:scale(1.03);
+
+.register-box {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 20px #A38C55;
 }
 
-button{
- width: 270px;
- padding: 10px;
- margin-top: 10px;
- background-color: #4facfe;
- border: none;
- border-radius: 6px;
- color: white;
-font-size: 16px;
-cursor: pointer;
- transition:0.3s;
+/* Title */
+.register-box h2 {
+    margin-bottom: 20px;
+    color: #A38C55;
 }
-button:hover{
- background-color: #2d8cf0;
- transform:scale(1.05);
+
+/* Inputs */
+.register-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
-button:active{
-transform:scale(0.95);
+
+/* Password with eye */
+.password-box {
+    position: relative;
 }
-em{
-font-size: 12px;
-color: gray;
+
+.password-box span {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
 }
-footer{
- color:white;
- text-align:center;
-padding:15px;
-position:fixed;
-bottom:0;
-width:100%;
+
+/* Button */
+.register-box button {
+    width: 100%;
+    padding: 10px;
+    background: #A38C55;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.register-box button:hover {
+    background: #8c7646;
+}
+
+/* Login link */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #A38C55;
+    text-decoration: none;
+    font-weight: bold;
 }

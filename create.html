@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account | MORVENI</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+
+<div class="register-box">
+    <h2>Create Account</h2>
+
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <input type="email" placeholder="Email">
+
+    <div class="password-box">
+        <input type="password" placeholder="Password" id="password">
+        <span onclick="togglePassword()">👁️</span>
+    </div>
+
+    <button>Create Account</button>
+
+    <p class="login-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </p>
+</div>
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>
