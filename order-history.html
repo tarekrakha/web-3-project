@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morvani | Order History</title>
+    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="order-history.css" />
+  </head>
+  <body>
+    <!-- NAVBAR (same style) -->
+    <nav id="navbar">
+      <div class="nav-left">
+        <a href="homepage.html">Home</a>
+        <a href="season.html">Shop</a>
+        <a href="order-history.html">Orders</a>
+      </div>
+
+      <div class="logo">
+        <img src="llogo.png" alt="Morvani Logo" />
+      </div>
+
+      <div class="nav-right">
+        <a href="login.html">Login</a>
+        <a href="create.html">create an account</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="season-hero" aria-label="Order history header">
+      <div class="season-hero__inner">
+        <div class="badge">Orders</div>
+        <h1>Order history</h1>
+        <p>
+          Track all your orders in one place — cancelled, preparing, shipped, and delivered.
+        </p>
+        <div class="season-actions">
+          <div class="order-tabs" aria-label="Status legend">
+            <span class="status status--preparing">Preparing</span>
+            <span class="status status--shipped">Shipped</span>
+            <span class="status status--done">Done</span>
+            <span class="status status--cancelled">Cancelled</span>
+          </div>
+          <a class="pill pill--primary" href="season.html?season=summer" style="text-decoration:none;">
+            Continue shopping
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="season-catalog">
+      <section class="catalog-header" aria-label="Summary">
+        <div>
+          <h2>Your orders</h2>
+         
+        </div>
+        <div class="summary-pills">
+          <span class="summary">Total: <b>8</b></span>
+          <span class="summary">Done: <b>3</b></span>
+          <span class="summary">Preparing: <b>2</b></span>
+          <span class="summary">Cancelled: <b>1</b></span>
+        </div>
+      </section>
+
+      <section class="orders" aria-label="Order list">
+        <!-- ORDER -->
+        <article class="order-card">
+          <div class="order-head">
+            <div>
+              <div class="order-id">Order #1048</div>
+              <div class="order-date">Placed: 16 Mar 2026</div>
+            </div>
+            <span class="status status--preparing">Preparing</span>
+          </div>
+
+          <div class="order-grid">
+            <div class="order-items">
+              <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                  <div class="item-name">Knit Sweater</div>
+                  <div class="item-meta">Color: Cream • Size: L • Qty: 1</div>
+                </div>
+                <div class="item-price">$90</div>
+              </div>
+              <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                  <div class="item-name">Thermal Set</div>
+                  <div class="item-meta">Color: Gray • Size: M • Qty: 2</div>
+                </div>
+                <div class="item-price">$150</div>
+              </div>
+            </div>
+
+            <div class="order-summary">
+              <div class="sum-row"><span>Subtotal</span><b>$240</b></div>
+              <div class="sum-row"><span>Shipping</span><b>$20</b></div>
+              <div class="sum-row sum-row--total"><span>Total</span><b>$260</b></div>
+              <a class="btn-link" href="#">View details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ORDER -->
+        <article class="order-card">
+          <div class="order-head">
+            <div>
+              <div class="order-id">Order #1042</div>
+              <div class="order-date">Placed: 03 Mar 2026</div>
+            </div>
+            <span class="status status--done">Done</span>
+          </div>
+
+          <div class="order-grid">
+            <div class="order-items">
+              <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                  <div class="item-name">Summer T‑Shirt</div>
+                  <div class="item-meta">Color: Blue • Size: M • Qty: 1</div>
+                </div>
+                <div class="item-price">$150</div>
+              </div>
+            </div>
+
+            <div class="order-summary">
+              <div class="sum-row"><span>Subtotal</span><b>$150</b></div>
+              <div class="sum-row"><span>Shipping</span><b>$20</b></div>
+              <div class="sum-row sum-row--total"><span>Total</span><b>$170</b></div>
+              <a class="btn-link" href="#">Reorder</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ORDER -->
+        <article class="order-card">
+          <div class="order-head">
+            <div>
+              <div class="order-id">Order #1036</div>
+              <div class="order-date">Placed: 20 Feb 2026</div>
+            </div>
+            <span class="status status--cancelled">Cancelled</span>
+          </div>
+
+          <div class="order-grid">
+            <div class="order-items">
+              <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                  <div class="item-name">Wool Coat</div>
+                  <div class="item-meta">Color: Black • Size: XL • Qty: 1</div>
+                </div>
+                <div class="item-price">$220</div>
+              </div>
+            </div>
+
+            <div class="order-summary">
+              <div class="sum-row"><span>Subtotal</span><b>$220</b></div>
+              <div class="sum-row"><span>Shipping</span><b>$20</b></div>
+              <div class="sum-row sum-row--total"><span>Total</span><b>$240</b></div>
+              <div class="note">Reason: payment not completed</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ORDER -->
+        <article class="order-card">
+          <div class="order-head">
+            <div>
+              <div class="order-id">Order #1031</div>
+              <div class="order-date">Placed: 02 Feb 2026</div>
+            </div>
+            <span class="status status--shipped">Shipped</span>
+          </div>
+
+          <div class="order-grid">
+            <div class="order-items">
+              <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                  <div class="item-name">Flannel Shirt</div>
+                  <div class="item-meta">Color: Brown • Size: L • Qty: 1</div>
+                </div>
+                <div class="item-price">$75</div>
+              </div>
+              <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                  <div class="item-name">Corduroy Pants</div>
+                  <div class="item-meta">Color: Beige • Size: M • Qty: 1</div>
+                </div>
+                <div class="item-price">$98</div>
+              </div>
+            </div>
+
+            <div class="order-summary">
+              <div class="sum-row"><span>Subtotal</span><b>$173</b></div>
+              <div class="sum-row"><span>Shipping</span><b>$20</b></div>
+              <div class="sum-row sum-row--total"><span>Total</span><b>$193</b></div>
+              <div class="note">Tracking: <span class="mono">MORV-98122</span></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 MORVENI Clothing Store</p>
+    </footer>
+  </body>
+</html>
+

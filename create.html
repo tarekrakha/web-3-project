@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account | MORVENI</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+
+<div class="register-box">
+     <a href="homepage.html" class="btn btn-home">← Back to Home</a>
+    <h2>Create Account</h2>
+<form method="post" action="addnewacc.php">
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="last_name" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+
+    <div class="password-box">
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <span onclick="togglePassword()">👁️</span>
+    </div>
+
+    <button >Create Account</button>
+</form>
+    <p class="login-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </p>
+</div>
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Morvani | Season</title>
+    <link rel="stylesheet" href="season.css" />
+  </head>
+  <body>
+  <nav id="navbar">
+
+  <!-- LEFT -->
+  <div class="nav-left">
+    <a href="homepage.html" class="back-home">← Back to Home</a>
+  </div>
+
+  <!-- CENTER LOGO -->
+  <div class="logo">
+    <img src="llogo.png" alt="Morvani Logo" />
+  </div>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+
+    <!-- SEARCH -->
+    <div class="nav-search">
+      <input type="text" placeholder="Search products..." />
+      <button>🔍</button>
+    </div>
+
+    
+  </div>
+
+</nav>
+
+    <header class="season-hero" aria-label="Season header">
+      <div class="season-hero__inner">
+        <div class="badge" id="seasonBadge">Collection</div>
+        <h1 id="seasonTitle">Season collection</h1>
+        <p id="seasonDesc">
+          Browse all items from this season. Use the pills to switch seasons.
+        </p>
+        <div class="season-actions">
+         <div class="catalog-filters">
+
+  <input type="radio" name="season" id="summer" checked>
+  <label for="summer" class="pill">Summer</label>
+
+  <input type="radio" name="season" id="spring">
+  <label for="spring" class="pill">Spring</label>
+
+  <input type="radio" name="season" id="fall">
+  <label for="fall" class="pill">Fall</label>
+
+  <input type="radio" name="season" id="winter">
+  <label for="winter" class="pill">Winter</label>
+
+</div>
+          <button class="pill pill--primary" id="filterBtn" type="button">
+            Filter
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="backdrop" id="filterBackdrop" hidden></div>
+
+    <aside class="filters" id="filterPanel" aria-label="Filters">
+      <div class="filters__head">
+        <h2 class="filters__title">Filter &amp; Sort</h2>
+        <div class="filters__headRight">
+          <button class="linklike" id="clearFilters" type="button">Clear</button>
+          <button class="linklike" id="closeFilters" type="button">Close</button>
+        </div>
+      </div>
+      
+      <div class="filterBlock">
+        <label class="filterLabel" for="sortSelect">Sort by price</label>
+        <select id="sortSelect" class="select">
+          <option value="none">Recommended</option>
+          <option value="low-high">Low → High</option>
+          <option value="high-low">High → Low</option>
+        </select>
+      </div>
+
+      <div class="filterBlock">
+        <div class="filterLabel">Color</div>
+        <div class="checkGrid" id="colorOptions"></div>
+      </div>
+
+      <div class="filterBlock">
+        <div class="filterLabel">Size</div>
+        <div class="checkGrid" id="sizeOptions"></div>
+      </div>
+    </aside>
+
+    <main id="catalog" class="season-catalog season-layout">
+      <section class="results" aria-label="Results">
+        <div class="catalog-header catalog-header--tight">
+          <div>
+            <h2 id="catalogTitle">Collection</h2>
+            <p class="sub">
+              Showing <span id="catalogCount">0</span> items.
+            </p>
+          </div>
+        </div>
+
+        <div id="catalogGrid" class="catalog-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 MORVENI Clothing Store</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://web.telegram.org" target="_blank">
+            <img src="telegram.png" alt="Telegram">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="snapchat.png" alt="twitter">
+        </a>
+        <a href="https://www.snapchat.com" target="_blank">
+            <img src="twitter.png" alt="twitter">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.x.com" target="_blank">
+            <img src="x.png" alt="X">
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="youtube.png" alt="YouTube">
+        </a>
+    </div>
+    <div class="footer-contact">
+        <p>
+            <img src="loc.png" alt="Location" class="contact-icon">
+            <a href="https://maps.app.goo.gl/eLCFfGcGwU4YLZnw5?g_st=ic" target="_blank">zgharta, Lebanon</a>
+        </p>
+        <p>
+            <img src="phone.png" alt="Phone" class="contact-icon">
+            <a href="tel:+96181540749">+96181540749</a>
+        </p>
+        <p>
+            <img src="email.png" alt="Email" class="contact-icon">
+            <a href="mailto:info@morveni.com">info@morveni.com</a>
+        </p>
+    </div>
+    </footer>
+
+    <script src="season.js"></script>
+  </body>
+</html>
+

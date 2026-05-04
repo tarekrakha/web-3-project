@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details | MORVENI</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+<nav>
+    <h1 class="logo">MORVENI</h1>
+    <ul>
+        <li><a href="homepage.html">home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+    </ul>
+    <div class="nav-left">
+        <a href="login.html">Login</a>
+        <a href="create.html">Create Account</a>
+    </div>
+    <div class="nav-right">
+        <a href="cart.html" class="cart-link">
+            <span id="cart-count">0</span>
+            <img src="bag.png" alt="Cart" width="25">
+        </a>
+    </div>
+</nav>
+
+<div class="product-container">
+    <div class="product-image">
+        <img id="productImg" src="shirt.jpg" alt="Product">
+    </div>
+
+    <div class="product-details">
+        <h2 id="productName">Classic White Shirt</h2>
+        <p class="sku" id="sku">SKU: 12345</p>
+        <p class="price" id="productPrice">$29.99</p>
+        <p class="status" id="productStatus">In Stock</p>
+        <p class="description" id="productDescription">High-quality clothing item from MORVENI.</p>
+
+        <label><b>Size:</b></label>
+        <select id="productSize"><option>Small</option><option>Meduim</option><option>Large</option><option>X-Large</option></select>
+
+        <label><b>Color:</b></label>
+        <select id="productColor"><option>White</option><option>Black</option><option>Blue</option></select>
+
+        <label><b>Quantity:</b></label>
+        <input id="quantity" type="number" value="1" min="1">
+
+        <div class="buttons">
+            <button class="cart-btn" type="button" id="addCart">Add to Cart</button>
+            <button class="buy-btn" type="button" id="buyNow">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/96181540749" class="whatsapp-btn" target="_blank">
+    <img src="whts.png" alt="WhatsApp">
+</a>
+
+<footer><p>© 2026 MORVENI Clothing Store</p></footer>
+<script src="product.js"></script>
+</body>
+</html>

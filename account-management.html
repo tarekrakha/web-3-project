@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morvani Admin - Account Management</title>
+    <link rel="stylesheet" href="account-management.css" />
+   
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>MORVANI</h2>
+      <ul>
+        <li><a href="adminproducts.html">Products</a></li>
+        <li><a href="order(S).html">Orders</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li ><a href="account-management.html">Account Management</a></li>
+        <li class="logout"><a href="homepage.html">log out</a></li>
+      </ul>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <div class="header">
+        <div>
+          <h1 style="margin:0">Account Management</h1>
+         
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn btn-ghost" id="resetDemo" type="button">Reset demo data</button>
+          <button class="btn btn-primary" id="addUserBtn" type="button">+ Add user</button>
+        </div>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="card">
+        <div class="grid">
+          <div class="field" style="grid-column: span 2">
+            <label for="q">Search</label>
+            <input class="input" id="q" type="search" placeholder="Search by name or email..." />
+            <div class="hint">Tip: try “admin” or “@gmail”.</div>
+          </div>
+
+          <div class="field">
+            <label for="role">Role</label>
+            <select class="select" id="role">
+              <option value="all">All</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="status">Status</label>
+            <select class="select" id="status">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="blocked">Blocked</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- USERS TABLE -->
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="usersTbody"></tbody>
+        </table>
+        <p class="hint" id="emptyMsg" style="display:none;margin-top:10px">
+          No users match your filters.
+        </p>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Edit user">
+        <header>
+          <h3 id="modalTitle">User</h3>
+          <button class="btn btn-ghost btn-sm" id="closeModal" type="button">Close</button>
+        </header>
+        <div class="content">
+          <div class="grid">
+            <div class="field" style="grid-column: span 2">
+              <label for="nameInput">Full name</label>
+              <input class="input" id="nameInput" type="text" />
+            </div>
+            <div class="field" style="grid-column: span 2">
+              <label for="emailInput">Email</label>
+              <input class="input" id="emailInput" type="email" />
+            </div>
+            <div class="field">
+              <label for="roleInput">Role</label>
+              <select class="select" id="roleInput">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="statusInput">Status</label>
+              <select class="select" id="statusInput">
+                <option value="active">Active</option>
+                <option value="blocked">Blocked</option>
+              </select>
+            </div>
+          </div>
+          <p class="hint">
+            This screen keeps the original browser editing style. Main products, orders, checkout, login, and signup are connected to MySQL.
+          </p>
+        </div>
+        <div class="footer">
+          <button class="btn btn-danger" id="deleteUser" type="button">Delete</button>
+          <button class="btn btn-success" id="saveUser" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

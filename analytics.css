@@ -1,0 +1,130 @@
+:root{
+    --gold:#A38C55;
+    --light:#E8DCC2;
+    --dark:#553f0d;
+    --white:#ffffff;
+    --danger:#ef4444;
+    --success:#22c55e;
+    --warning:#f59e0b;
+}
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, var(--gold), var(--light));
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    background:var(--dark);
+    color:white;
+    min-height:100vh;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:var(--gold);
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar li:hover{
+    background:var(--gold);
+}
+
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    display:block;
+}
+
+.active{
+    background:var(--gold);
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    color:var(--dark);
+}
+
+/* ================= STATS ================= */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    background:var(--white);
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card h3{
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--gold);
+}
+
+/* CARD */
+.card{
+    background:var(--white);
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:var(--light);
+    padding:15px;
+    color:var(--dark);
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
