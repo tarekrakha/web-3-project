@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account | MORVENI</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+
+<div class="register-box">
+     <a href="index.html" class="btn btn-home">← Back to Home</a>
+    <h2>Create Account</h2>
+<form id="registerForm">
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="last_name" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+
+    <div class="password-box">
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <span onclick="togglePassword()">👁️</span>
+    </div>
+
+    <button type="submit">Create Account</button>
+</form>
+    <p id="registerMsg" class="register-message"></p>
+    <p class="login-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </p>
+</div>
+
+<script src="config.js"></script>
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const msg  = document.getElementById("registerMsg");
+    msg.textContent = "";
+    const data = new FormData(e.target);
+    try {
+        const res    = await fetch(api("addnewacc.php"), { method:"POST", body:data, ...withAuth });
+        const result = await res.json();
+        if (result.success) {
+            window.location.href = result.redirect || "index.html";
+        } else {
+            msg.textContent = result.message || "Registration failed.";
+            msg.className   = "register-message error";
+        }
+    } catch (err) {
+        msg.textContent = "Could not reach the server. Please try again.";
+        msg.className   = "register-message error";
+    }
+});
+</script>
+
+</body>
+</html>

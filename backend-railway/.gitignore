@@ -1,0 +1,8 @@
+# local/editor junk
+.DS_Store
+Thumbs.db
+*.log
+
+# keep the uploads folder structure but ignore uploaded files
+uploads/products/*
+!uploads/products/.gitkeep

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>login | MORVENI</title>
+        <link rel="stylesheet" href="login.css">
+       
+</head>
+
+<body>
+
+<div class="login-box">
+  <a href="index.html" class="btn btn-home">← Back to Home</a>
+<h2>Login</h2>
+
+<form id="loginForm">
+<input type="email" name="email" placeholder="Email" required><br>
+
+<div class="password-box">
+    <input type="password" name="password" placeholder="Password" id="password" required>
+    <span class="eye" onclick="togglePassword()">👁️</span>
+</div><br>
+
+<button type="submit">Login</button>
+</form>
+<p id="loginMsg" class="login-message"></p>
+<p class="create-link">
+    Don’t have an account?
+    <a href="create.html">Create Account</a>
+</p>
+</div>
+<a href="https://wa.me/96181540749" class="whatsapp-btn" target="_blank">
+        <img src="whts.png" alt="WhatsApp">
+    </a>
+
+<script src="config.js"></script>
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const msg  = document.getElementById("loginMsg");
+    msg.textContent = "";
+    const data = new FormData(e.target);
+    try {
+        const res    = await fetch(api("login_api.php"), { method:"POST", body:data, ...withAuth });
+        const result = await res.json();
+        if (result.success) {
+            window.location.href = result.redirect || "index.html";
+        } else {
+            msg.textContent = result.message || "Login failed.";
+            msg.className   = "login-message error";
+        }
+    } catch (err) {
+        msg.textContent = "Could not reach the server. Please try again.";
+        msg.className   = "login-message error";
+    }
+});
+</script>
+</body>
+    <footer> 
+     
+   © 2026 Clothing Store
+</footer>
+</html>
