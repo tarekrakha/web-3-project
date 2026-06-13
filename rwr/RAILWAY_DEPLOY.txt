@@ -1,0 +1,61 @@
+════════════════════════════════════════════════════════════
+  MORVENI — DEPLOYING TO RAILWAY
+════════════════════════════════════════════════════════════
+
+WHAT CHANGED (only config — your app code/logic untouched)
+──────────────────────────────────────────────────────────
+• db.php          → now reads Railway's MySQL env vars
+                    (MYSQLHOST / MYSQLUSER / MYSQLPASSWORD /
+                     MYSQLDATABASE / MYSQLPORT). Still falls
+                     back to XAMPP defaults so it runs locally.
+                     Also handles PHP 8's mysqli exception so
+                     your JSON error message works.
+• index.php       → new: redirects "/" to homepage.html
+• Procfile        → tells Railway how to start the PHP server
+• nixpacks.toml   → pins PHP 8.3 + mysqli, gd, fileinfo
+• railway.json    → start command + restart policy
+• .gitignore      → keeps uploads/ folder, ignores junk
+
+STEP-BY-STEP
+────────────
+1. Put ALL these files at the ROOT of a GitHub repo
+   (not inside a subfolder).
+
+2. railway.app → New Project → Deploy from GitHub repo.
+
+3. In the project: New → Database → MySQL.
+   Railway auto-creates the MYSQL* variables.
+
+4. Link the variables to your app service:
+   - Open your web service → Variables tab.
+   - Add Variable Reference for each:
+       MYSQLHOST, MYSQLUSER, MYSQLPASSWORD,
+       MYSQLDATABASE, MYSQLPORT
+     (pick them from the MySQL service).
+
+5. Import the database:
+   - Open the MySQL service → "Connect" tab → copy the
+     connection command, OR use the Railway CLI:
+       railway connect MySQL
+   - Then run your schema, e.g.:
+       mysql -h HOST -P PORT -u USER -pPASS DBNAME < morveni_db.sql
+   (HOST/PORT/USER/PASS/DBNAME come from the MySQL service vars.)
+
+6. Deploy. Railway gives you a public URL like
+   https://yourapp.up.railway.app  → opens the homepage.
+
+⚠ IMPORTANT — PRODUCT IMAGE UPLOADS
+──────────────────────────────────
+Railway's disk is EPHEMERAL: files written to uploads/products/
+by products_api.php are ERASED on every redeploy.
+For a school demo this is usually fine. If you need uploads to
+persist, attach a Railway Volume mounted at /app/uploads, or
+store images on a service like Cloudinary/S3.
+
+DEFAULT ADMIN
+─────────────
+Your SQL seeds products but no admin user. Register an account,
+then in the Railway MySQL console run:
+   UPDATE users SET role='admin' WHERE email='YOUR_EMAIL';
+to get into the admin pages.
+════════════════════════════════════════════════════════════

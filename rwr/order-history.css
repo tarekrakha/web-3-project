@@ -1,0 +1,202 @@
+.orders{
+  margin-top: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.order-tabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.summary-pills{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.summary{
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(85, 63, 13, 0.16);
+  color: #553f0d;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.order-card{
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(85, 63, 13, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.order-head{
+  padding: 16px 18px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.order-id{
+  font-weight: 900;
+  color:#553f0d;
+  letter-spacing:-0.01em;
+}
+
+.order-date{
+  margin-top:6px;
+  color: rgba(85, 63, 13, 0.8);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.order-grid{
+  display:grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 16px;
+  padding: 16px 18px 18px;
+}
+
+.order-items{
+  display:grid;
+  gap: 12px;
+}
+
+.order-item{
+  display:grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 12px;
+  align-items:center;
+  padding: 10px 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.thumb{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(163,140,85,0.35), rgba(232,220,194,0.85));
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.item-name{
+  font-weight: 900;
+  color:#553f0d;
+}
+
+.item-meta{
+  margin-top:4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(85, 63, 13, 0.82);
+}
+
+.item-price{
+  font-weight: 900;
+  color:#111;
+  white-space: nowrap;
+}
+
+.order-summary{
+  border-radius: 16px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 12px 12px;
+  height: fit-content;
+}
+
+.sum-row{
+  display:flex;
+  justify-content:space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 2px;
+  font-weight: 800;
+  color: rgba(85, 63, 13, 0.92);
+}
+
+.sum-row--total{
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: 6px;
+  padding-top: 10px;
+  color:#111;
+}
+
+.note{
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(85, 63, 13, 0.86);
+}
+
+.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
+.btn-link{
+  display:inline-block;
+  margin-top: 10px;
+  text-decoration:none;
+  font-weight: 900;
+  color:#553f0d;
+  background: rgba(163,140,85,0.18);
+  border: 1px solid rgba(163,140,85,0.25);
+  padding: 10px 12px;
+  border-radius: 999px;
+}
+
+.btn-link:hover{
+  filter: brightness(1.03);
+}
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.55);
+  color:#553f0d;
+  white-space: nowrap;
+}
+
+.status::before{
+  content:"";
+  width:10px;
+  height:10px;
+  border-radius: 999px;
+  background: rgba(85,63,13,0.35);
+}
+
+.status--preparing{ background: rgba(245, 158, 11, 0.18); border-color: rgba(245, 158, 11, 0.25); }
+.status--preparing::before{ background: #f59e0b; }
+
+.status--shipped{ background: rgba(59, 130, 246, 0.18); border-color: rgba(59, 130, 246, 0.25); }
+.status--shipped::before{ background: #3b82f6; }
+
+.status--done{ background: rgba(34, 197, 94, 0.18); border-color: rgba(34, 197, 94, 0.25); }
+.status--done::before{ background: #22c55e; }
+
+.status--cancelled{ background: rgba(239, 68, 68, 0.16); border-color: rgba(239, 68, 68, 0.25); }
+.status--cancelled::before{ background: #ef4444; }
+
+@media (max-width: 980px){
+  .order-grid{ grid-template-columns: 1fr; }
+  .summary-pills{ justify-content:flex-start; }
+}
+
+@media (max-width: 640px){
+  .order-item{ grid-template-columns: 44px 1fr; }
+  .item-price{ grid-column: 2; justify-self: start; }
+}
+

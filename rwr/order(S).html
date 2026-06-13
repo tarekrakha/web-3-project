@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morvani Admin - Orders</title>
+<link rel="stylesheet" href="orders.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>MORVANI</h2>
+    <ul>
+        <li><a href="adminproducts.html">Products</a></li>
+        <li class="active"><a href="order(S).html">Orders</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="account-management.html">Account Management</a></li>
+        <li class="logout"><a href="logout.php">Log Out</a></li>
+    </ul>
+</div>
+
+<div class="main">
+    <div class="header">
+        <h1>Orders Management</h1>
+    </div>
+
+    <div class="card" style="overflow-x:auto">
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Products</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Address</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Tracking</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="ordersBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="orders.js"></script>
+</body>
+</html>

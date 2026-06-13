@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morvani | Order History</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="order-history.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-left">
+        <a href="homepage.html">Home</a>
+        <a href="season.html">Shop</a>
+        <a href="order-history.html">Orders</a>
+    </div>
+    <div class="logo"><img src="llogo.png" alt="Morvani Logo"></div>
+    <div class="nav-right">
+        <a href="login.html">Login</a>
+        <a href="create.html">create an account</a>
+    </div>
+</nav>
+
+<header class="season-hero">
+    <div class="season-hero__inner">
+        <div class="badge">Orders</div>
+        <h1>Order History</h1>
+        <p>Track all your orders — preparing, shipped, delivered and cancelled.</p>
+        <div class="season-actions">
+            <div class="order-tabs">
+                <span class="status status--preparing">Preparing</span>
+                <span class="status status--shipped">Shipped</span>
+                <span class="status status--done">Done</span>
+                <span class="status status--cancelled">Cancelled</span>
+            </div>
+            <a class="pill pill--primary" href="season.html" style="text-decoration:none">Continue shopping</a>
+        </div>
+    </div>
+</header>
+
+<main class="season-catalog">
+    <section class="catalog-header">
+        <div><h2>Your Orders</h2></div>
+        <div class="summary-pills" id="summaryPills">
+            <span class="summary">Loading...</span>
+        </div>
+    </section>
+    <section class="orders" id="ordersList">
+        <div class="empty-state">Loading your orders...</div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 MORVENI Clothing Store</p>
+</footer>
+
+<script src="nav_session.js"></script>
+<script>
+function money(v){ return "$" + Number(v||0).toFixed(2); }
+function statusClass(s){
+    s = (s||"").toLowerCase();
+    if (s==="shipped")   return "status--shipped";
+    if (s==="delivered"||s==="done") return "status--done";
+    if (s==="cancelled") return "status--cancelled";
+    return "status--preparing";
+}
+async function loadOrders(){
+    const res = await fetch("order_history_api.php");
+    if (res.status===401){
+        document.getElementById("ordersList").innerHTML =
+            `<div class="empty-state">Please <a href="login.html">log in</a> to see your orders.</div>`;
+        document.getElementById("summaryPills").innerHTML="";
+        return;
+    }
+    const data   = await res.json();
+    const orders = data.orders || [];
+    const total     = orders.length;
+    const done      = orders.filter(o=>["delivered","done"].includes((o.status||"").toLowerCase())).length;
+    const preparing = orders.filter(o=>(o.status||"").toLowerCase()==="preparing").length;
+    const cancelled = orders.filter(o=>(o.status||"").toLowerCase()==="cancelled").length;
+    document.getElementById("summaryPills").innerHTML=`
+        <span class="summary">Total: <b>${total}</b></span>
+        <span class="summary">Done: <b>${done}</b></span>
+        <span class="summary">Preparing: <b>${preparing}</b></span>
+        <span class="summary">Cancelled: <b>${cancelled}</b></span>`;
+    if(!orders.length){
+        document.getElementById("ordersList").innerHTML=
+            `<div class="empty-state">No orders yet. <a href="season.html">Start shopping!</a></div>`;
+        return;
+    }
+    document.getElementById("ordersList").innerHTML=orders.map(o=>{
+        const date=new Date(o.created_at).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+        const sc=statusClass(o.status);
+        const items=(o.items||[]).map(i=>`
+            <div class="order-item">
+                <div class="thumb"></div>
+                <div>
+                    <div class="item-name">${i.product_name}</div>
+                    <div class="item-meta">${i.color?"Color: "+i.color+" • ":""}${i.size?"Size: "+i.size+" • ":""}Qty: ${i.quantity}</div>
+                </div>
+                <div class="item-price">${money(i.price*i.quantity)}</div>
+            </div>`).join("")||"<div class='item-meta'>No items.</div>";
+        const tracking=o.tracking_code?`<div class="note">Tracking: <span class="mono">${o.tracking_code}</span></div>`:"";
+        return `
+        <article class="order-card">
+            <div class="order-head">
+                <div>
+                    <div class="order-id">Order #${o.id}</div>
+                    <div class="order-date">Placed: ${date}</div>
+                </div>
+                <span class="status ${sc}">${o.status||"Pending"}</span>
+            </div>
+            <div class="order-grid">
+                <div class="order-items">${items}</div>
+                <div class="order-summary">
+                    <div class="sum-row"><span>Subtotal</span><b>${money(o.subtotal)}</b></div>
+                    <div class="sum-row"><span>Shipping</span><b>${money(o.shipping)}</b></div>
+                    <div class="sum-row sum-row--total"><span>Total</span><b>${money(o.total)}</b></div>
+                    ${tracking}
+                </div>
+            </div>
+        </article>`;
+    }).join("");
+}
+loadOrders();
+</script>
+</body>
+</html>

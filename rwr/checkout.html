@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout | MORVENI</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-left">
+    <a href="cart.html" class="back-home">← Back to Cart</a>
+  </div>
+  <div class="logo">
+    <img src="llogo.png" alt="Morvani Logo" />
+  </div>
+</nav>
+
+<h1 class="title">Checkout</h1>
+
+<div class="steps">
+    <span class="step active" id="stepShipping">1. Shipping</span>
+    <span class="line"></span>
+    <span class="step" id="stepPayment">2. Payment</span>
+</div>
+
+<div class="checkout-container">
+
+    <!-- ── Shipping Box ── -->
+    <div class="box checkout-step" id="shippingBox">
+        <h2>Shipping Address</h2>
+
+        <!-- Saved addresses list -->
+        <div id="savedAddressContainer"></div>
+
+        <!-- Add new address button -->
+        <button class="add-address-btn" type="button" id="openAddressModal">+ Add New Address</button>
+
+        <button class="place-order" type="button" id="continuePayment">Continue to Payment</button>
+    </div>
+
+    <!-- ── Payment Box ── -->
+    <div class="box checkout-step hidden" id="paymentBox">
+        <h2>Payment Method</h2>
+
+        <label class="payment-option">
+            <input type="radio" name="pay" value="Cash on Delivery" checked>
+            <span>Cash on Delivery</span>
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="pay" value="Online Payment Gateway">
+            <span>Online Payment Gateway</span>
+        </label>
+
+        <div class="button-row">
+            <button class="secondary-btn" type="button" id="backShipping">Back</button>
+            <button class="place-order" type="button" id="placeOrder">Place Order</button>
+        </div>
+        <p id="checkoutMessage" class="checkout-message"></p>
+    </div>
+
+    <!-- ── Order Summary Box ── -->
+    <div class="box summary">
+        <h2>Order Summary</h2>
+        <div id="summaryItems"></div>
+        <div class="summary-divider"></div>
+        <div class="summary-line"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+        <div class="summary-line"><span>Shipping</span><span id="shipping">$5.00</span></div>
+        <div class="summary-total"><span>Total</span><span id="total">$5.00</span></div>
+        <p class="delivery">Estimated Delivery: 3 - 5 Days</p>
+    </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Add New Address Modal
+     ══════════════════════════════════════════════════════ -->
+<div class="modal-overlay hidden" id="addressModalOverlay">
+    <div class="modal-box" id="addressModal">
+        <div class="modal-header">
+            <h3>Add New Address</h3>
+            <button class="modal-close" id="closeAddressModal" aria-label="Close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <input type="text" id="fullName" placeholder="Full Name">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="street" placeholder="Street Address">
+            <input type="text" id="addressFront" placeholder="Front Address Detail (building, landmark...)">
+            <input type="text" id="addressBack" placeholder="Back Address / Apt / Floor (optional)">
+            <input type="text" id="addressLabel" placeholder="Label (e.g. Home, Work)" value="Home">
+            <label class="save-check-label">
+                <input type="checkbox" id="saveAddress"> Save this address for future orders
+            </label>
+        </div>
+        <div class="modal-footer">
+            <button class="secondary-btn modal-cancel-btn" type="button" id="cancelAddressModal">Cancel</button>
+            <button class="place-order modal-confirm-btn" type="button" id="confirmNewAddress">Use This Address</button>
+        </div>
+    </div>
+</div>
+
+<script src="checkout.js"></script>
+</body>
+</html>
