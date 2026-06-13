@@ -4,7 +4,10 @@ header("Content-Type: application/json");
 require "db.php";
 
 $uploadDir = __DIR__ . "/uploads/products/";
-$uploadUrl = "uploads/products/";
+// Absolute URL so images load from THIS backend even when the frontend is on another domain (GitHub Pages).
+$scheme    = (!empty($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] !== "off") ? "https" : "http";
+$host      = $_SERVER["HTTP_HOST"] ?? "";
+$uploadUrl = $scheme . "://" . $host . "/uploads/products/";
 if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 
 function clean($v){ return trim($v ?? ""); }
