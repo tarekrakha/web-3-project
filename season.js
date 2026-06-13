@@ -19,8 +19,8 @@ async function loadCatalog() {
 }
 
 function renderOptions() {
-    const colors = [...new Set(allProducts.map(p => p.color).filter(Boolean))];
-    const sizes = [...new Set(allProducts.map(p => p.size).filter(Boolean))];
+    const colors = [...new Set(allProducts.flatMap(p => Array.isArray(p.colors) ? p.colors : []).filter(Boolean))];
+    const sizes = [...new Set(allProducts.flatMap(p => Array.isArray(p.sizes) ? p.sizes : []).filter(Boolean))];
     document.getElementById("colorOptions").innerHTML = colors.map(c => `<label><input type="checkbox" value="${c}"> ${c}</label>`).join("");
     document.getElementById("sizeOptions").innerHTML = sizes.map(s => `<label><input type="checkbox" value="${s}"> ${s}</label>`).join("");
 }
@@ -38,8 +38,8 @@ function renderCatalog() {
     let list = allProducts.filter(p => (p.category || "").toLowerCase() === selectedSeason.toLowerCase());
 
     if (search) list = list.filter(p => (p.name || "").toLowerCase().includes(search));
-    if (selectedColors.length) list = list.filter(p => selectedColors.includes(p.color));
-    if (selectedSizes.length) list = list.filter(p => selectedSizes.includes(p.size));
+    if (selectedColors.length) list = list.filter(p => (p.colors || []).some(c => selectedColors.includes(c)));
+    if (selectedSizes.length) list = list.filter(p => (p.sizes || []).some(sz => selectedSizes.includes(sz)));
 
     if (sort === "low-high") list.sort((a,b) => Number(a.price) - Number(b.price));
     if (sort === "high-low") list.sort((a,b) => Number(b.price) - Number(a.price));
@@ -59,7 +59,7 @@ function renderCatalog() {
         <div class="product-card">
             <a href="product.html?id=${product.id}"><img src="${productImage(product)}" alt="${product.name}"></a>
             <h3>${product.name}</h3>
-            <p>${product.color} • ${product.size}</p>
+            <p>${(product.colors || []).join(", ") || "—"} • ${(product.sizes || []).join(", ") || "—"}</p>
             <p><b>${money(product.price)}</b></p>
             <button type="button" onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
         </div>
@@ -77,8 +77,8 @@ function addToCart(product) {
             name: product.name,
             price: Number(product.price),
             quantity: 1,
-            size: product.size,
-            color: product.color,
+            size: (product.sizes && product.sizes[0]) || "",
+            color: (product.colors && product.colors[0]) || "",
             image: product.image
         });
     }

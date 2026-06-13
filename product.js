@@ -39,14 +39,17 @@ async function loadProduct() {
 
     currentProduct = data.product;
 
+    const sizes  = Array.isArray(currentProduct.sizes)  ? currentProduct.sizes  : [];
+    const colors = Array.isArray(currentProduct.colors) ? currentProduct.colors : [];
+
     document.getElementById("productName").textContent        = currentProduct.name;
     document.getElementById("sku").textContent                = "SKU: MORV-" + currentProduct.id;
     document.getElementById("productPrice").textContent       = money(currentProduct.price);
-    document.getElementById("productStatus").textContent      = Number(currentProduct.stock) > 0 ? "In Stock" : "Out of Stock";
-    document.getElementById("productDescription").textContent = `${currentProduct.category} item in ${currentProduct.color}.`;
+    document.getElementById("productStatus").textContent      = Number(currentProduct.total_stock) > 0 ? "In Stock" : "Out of Stock";
+    document.getElementById("productDescription").textContent = `${currentProduct.category} item${colors.length ? " in " + colors.join(", ") : ""}.`;
     document.getElementById("productImg").src                 = currentProduct.image || "pic1.png";
-    document.getElementById("productSize").innerHTML          = `<option>${currentProduct.size}</option>`;
-    document.getElementById("productColor").innerHTML         = `<option>${currentProduct.color}</option>`;
+    document.getElementById("productSize").innerHTML          = sizes.length  ? sizes.map(s  => `<option>${s}</option>`).join("")  : "<option>One Size</option>";
+    document.getElementById("productColor").innerHTML         = colors.length ? colors.map(c => `<option>${c}</option>`).join("") : "<option>Default</option>";
 
     // Enable buttons only once a real product is loaded
     document.getElementById("addCart").disabled = false;
